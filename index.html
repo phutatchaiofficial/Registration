@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>PHUTATCHAI 21st Sun Till Stardust Registration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+.title-th{
+  font-family:'Noto Sans Thai Looped', sans-serif;
+  font-size:21px;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+
+  background-image: url("phutatchai.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+body{
+  min-height:750px;
+}
+
+.box{
+  background: rgba(255,255,255,0.85);
+  padding:21px;
+  border-radius:12px;
+  width:320px;
+  text-align:center;
+  margin:350px auto;
+}
+
+h2{
+  font-weight:600;
+}
+
+/* หัวข้อ */
+.box h2{
+  font-family:'Noto Sans Thai Looped', sans-serif;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:0.5px;
+}
+
+.box h2{
+  line-height:1.5;
+}
+
+input{
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+
+input{
+  width:100%;
+  padding:16px;
+  margin:14px 0;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+  font-family:'Noto Sans Thai Looped', sans-serif;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  font-size:16px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-family:'Noto Sans Thai Looped', sans-serif;
+}
+
+</style>
+
+</head>
+<body>
+
+  <div class="box">
+
+<h2 class="title-th">ลงทะเบียนเข้างาน</h2>
+
+<form id="registerForm">
+  <input type="text" name="name" placeholder="ชื่อ" required>
+  <input type="tel" name="phone" placeholder="เบอร์โทร" required>
+  <button type="submit">ลงทะเบียน</button>
+</form>
+
+<script>
+const form = document.getElementById("registerForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbwdHaYLHO-6S9ek3HmUNgUEoj2aeF-yPeBpxyrBdnZrQPfZ1clqbVEQIuirhwn88TKxdQ/exec", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .catch(error => {
+    console.log("Error:", error);
+  })
+  .finally(() => {
+    window.location.href = "thankyou.html";
+  });
+});
+</script>
